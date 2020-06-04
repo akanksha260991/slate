@@ -66,6 +66,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 
 
+<!---
 # Kittens
 
 ## Get All Kittens
@@ -214,3 +215,5 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete
 
+
+-->
