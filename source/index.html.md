@@ -3,27 +3,25 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='#'>Sign Up for the BrowserStack Key</a>
+  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
   - errors
+  - espresso_api
 
 search: true
 ---
 
-# Introduction
+# Overview
 
 Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
 # Authentication
 
@@ -64,6 +62,9 @@ Kittn expects for the API key to be included in all API requests to the server i
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
+
+
+
 
 # Kittens
 
@@ -147,30 +148,6 @@ import kittn
 
 api = kittn.authorize('meowmeowmeow')
 api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
 ```
 
 This endpoint retrieves a specific kitten.
