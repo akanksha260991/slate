@@ -49,7 +49,7 @@ curl -u "USERNAME:ACESS_KEY"
 
 <p>All requests must be made to our endpoint via HTTP. Authentication to the API needs to happen via HTTP Basic Auth. </p>
 
-You can authenticate to our BrowserStack **App Automate** APIs by providing:
+You can authenticate to our BrowserStack **App Automate** APIs by providing: <br>
 
 | API       | Description                         |
 |-----------|--------|-------------------------------------|
