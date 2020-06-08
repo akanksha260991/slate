@@ -11,57 +11,54 @@ toc_footers:
 includes:
   - errors
   - espresso_api
+  - xcuitest_api
+  - custom_media_api
 
 search: true
 ---
 
 # Overview
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+<p>Welcome to BrowserStack App Automate API. You can use this API Reference to access all our API endpoints for automated testing of your apps on BrowserStack. The API's allows you integrate BrowserStack to your continuous integration environment. </p>
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+<p>The App Automate APIs have been grouped as:</p>
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+| API       | Description                         |
+|-----------|--------|-------------------------------------|
+|  <b>Espresso API</b> | Provides a simple and flexible way to upload Android apps, upload Espresso test-suites and start build executions. Post the build execution, the Espresso build and sessions APIs can be used to view the execution details. |
+|  <b>XCUITest API</b>  | Provides a simple and flexible way to upload iOS apps, upload XCUI test-suites and start build executions. Post the build execution, the XCUI build and sessions APIs can be used to view the execution details. |
+|  <b>Appium API</b>  | Allows you to upload your Android/iOS apps for Appium testing on BrowserStack. Post the session execution, the Appium build and sessions APIs can be used to view the execution details. |
+|  <b>Custom Media API</b>  | API to upload media files you want to use in your tests running on the BrowserStack servers. |
+
+
+
+<p>The APIs are organized around REST. All request and response bodies, including errors, are encoded in JSON.</p>
+
+Our API endpoint is `https://api-cloud.browserstack.com`
+
 
 # Authentication
 
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+> Authorization:
 
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+curl -u "USERNAME:ACESS_KEY"
 ```
 
-```javascript
-const kittn = require('kittn');
 
-let api = kittn.authorize('meowmeowmeow');
-```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+<p>All requests must be made to our endpoint via HTTP. Authentication to the API needs to happen via HTTP Basic Auth. </p>
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+You can authenticate to our BrowserStack **App Automate** APIs by providing:
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+| API       | Description                         |
+|-----------|--------|-------------------------------------|
+|  <b>USERNAME</b> | The username for your account on BrowserStack. |
+|  <b>ACCESS-KEY</b>  | The access-key for your account on BrowserStack. |
 
-`Authorization: meowmeowmeow`
+You can access your credentials from [Account Settings](https://www.browserstack.com/accounts/settings) page. The credentials can also be accessed from the [App Automate dashboard](https://app-automate.browserstack.com/dashboard), when the user is signed in as shown:
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
+![Authenticate]('images/authenticate.png')
 
 
 
