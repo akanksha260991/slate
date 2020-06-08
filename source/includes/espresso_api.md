@@ -431,7 +431,7 @@ curl -u "USERNAME:ACCESS_KEY" \
 ```
 
 
-We automatically delete your uploaded test-suites after 30 days from the day of upload. You can also use our REST API to explicitly delete a test-suite before this 30 day time period. The test-suite can be deleted using the test-suite's `test_url`.
+We automatically delete your uploaded test-suites after 30 days from the day of upload. However, you can also use our REST API to explicitly delete a test-suite before this 30 day time period. The test-suite can be deleted using the test-suite's `test_url`.
 
 <br>
 
@@ -513,6 +513,23 @@ curl -u "USERNAME:ACCESS_KEY" \
 |  devices <br><sub><sup>required</sup></sub> | string | Array of devices on which you want the test-suite execution. <br> <b>Example</b>  `["Samsung Galaxy S8-7.0","Google Pixel 3-9.0"]` |
 |  project <br><sub><sup>optional</sup></sub> | string | Name of the project. It can be used as a constant to list multiple build executions under same project name. <br> <b>Example</b>  `Espresso_Test` |
 |  shards <br><sub><sup>optional</sup></sub>  | object | Shard object to split and execute the test-suite in shards. You can specify the `numberOfShards` and `mapping` object as shown in example request. |
+|  callbackURL <br><sub><sup>optional</sup></sub>  | string | Specify a callback url where we can send a confirmation once your individual test execution is completed. |
+|  projectNotifyURL <br><sub><sup>optional</sup></sub>  | string | Notify url for projects where we can send a confirmation once execution of all the builds under the project are completed. |
+|  video <br><sub><sup>optional</sup></sub>  | boolean | Enable/Disable the video of the test run. <br> <b>Default</b> : `true` |
+|  deviceLogs <br><sub><sup>optional</sup></sub>  | boolean | Enable the device logs. <br> <b>Default</b> : `false` |
+|  networkLogs <br><sub><sup>optional</sup></sub>  | boolean | Enable the network logs. <br> <b>Default</b> : `false` |
+|  local <br><sub><sup>optional</sup></sub>  | boolean | Required if you are testing against internal/local servers. <br> <b>Default</b> : `false` |
+|  localIdentifier <br><sub><sup>optional</sup></sub>  | string | If you are using same account to test multiple applications, you can setup named connection using the localIdentifier option. <br> <b>Example</b> : `Test123` |
+|  networkProfile <br><sub><sup>optional</sup></sub>  | string |  Simulate different network conditions from the [list of existing](https://www.browserstack.com/app-automate/network-simulation) network profiles. <br> <b>Example</b> : `2g-gprs-good` |
+|  customNetwork <br><sub><sup>optional</sup></sub>  | string |  Simulate the custom network conditions. <br> <b>Format</b> : `download speed (kbps), upload speed (kbps), latency (ms), packet loss (%)` |
+|  geoLocation <br><sub><sup>optional</sup></sub>  | string | Test how your app behaves in specific countries. View the [list of supported countries](https://www.browserstack.com/ip-geolocation).<br> <b>Example</b> : `CN` for China |
+|  gpsLocation <br><sub><sup>optional</sup></sub>  | string |  Simulate the location of the device to a particular GPS location. Acceptable range for latitude is -90 to +90 and for longitude is -180 to +180. <br> <b>Example</b> : `40.730610,-73.935242` |
+|  locale <br><sub><sup>optional</sup></sub>  | string | Change the locale to test the localized version of your app. <br> <b>Example</b> : `fr` |
+|  language <br><sub><sup>optional</sup></sub>  | string | Set the language of the app under test. <br> <b>Example</b> : `fr` |
+|  deviceOrientation <br><sub><sup>optional</sup></sub>  | string | Set the language of the app under test. <br> <b>Default</b> : `potrait` |
+|  idleTimeout <br><sub><sup>optional</sup></sub>  | integer | Specify the maximum time limit for which your tests can remain idle. Accepted values are between 60 sec to 900 sec. <br> <b>Example</b> : `80` |
+|  uploadMedia <br><sub><sup>optional</sup></sub>  | array | Allows you to upload images or videos that are required during the test executions. <br> <b>Example</b> : `["media://49a8jg6280ca89075bfd8f15280ca89075bfd8f15", "media://9b7gd5s30ca89075bfd8f15280ca89075bfd8"]` |
+|  otherApps <br><sub><sup>optional</sup></sub>  | array | Allows you to use uploaded apps that are required alongwith the main app during the test executions. <br> <b>Example</b> :  `["bs://49a8jg6280ca89075bfd8f15280ca89075bfd8f15", "bs://9b7gd5s30ca89075bfd8f15280ca89075bfd8"]` |
 
 <br>
 
