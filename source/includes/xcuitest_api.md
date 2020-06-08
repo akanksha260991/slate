@@ -64,7 +64,7 @@ Upload an app from local machine
 
 | Name      | Type   | Description                         |
 |-----------|--------|-------------------------------------|
-|  file <br><sub><sup>required</sup></sub> | string | The path to the app file in your local system. <br> <b>Example</b> `/Users/Desktop/Appium/app-debug.ipa` |
+|  file <br><sub><sup>required</sup></sub> | string | The path to the app file in your local system. <br> <b>Example</b> `/Users/Desktop/Apps/app-debug.ipa` |
 |  custom_id <br><sub><sup>optional</sup></sub> | string | Constant name for the uploaded app. You can upload multiple apps using the same custom id. <br> <b>Example</b>  `SampleApp` |
 
 
@@ -494,7 +494,7 @@ There will a **success** or **error** object depending on the success/failure of
 
 ```shell
 curl -X POST "https://api-cloud.browserstack.com/app-automate/xcuitest/v2/build" \
--d '{"devices": ["iPhone 11 Pro-13"], "app": "bs://e8ddcb5649a8280ca89075bfd8f151115bba6b3", "deviceLogs" : "true", "testSuite": "bs://f7c874f21852ba57957a3fdc33f47514288c4ba4"}' \
+-d '{"devices": ["iPhone 11 Pro-13"], "app": "bs://3b79f7f0390dbe5f3550b544514bddcaa8197abe", "testSuite": "bs://832ge0b1c3d8bacef95ad71c09c65ad2a0008499", "project": "XCUISampleBuild" }' \
 -H "Content-Type: application/json" \
 -u "akankshaverma1:HxWsPGucWDxLU1qHYzxn"
 ```
@@ -527,7 +527,26 @@ You can also specify optional parameters like `debugscreenshots` for enabling th
 |  testSuite <br><sub><sup>required</sup></sub> | string | Test url of test uploaded on BrowserStack. <br> <b>Example</b>  `bs://832ge0b1c3d8bacef95ad71c09c65ad2a0008499` |
 |  devices <br><sub><sup>required</sup></sub> | string | Array of devices on which you want the test-suite execution. <br> <b>Example</b>  `["Samsung Galaxy S8-7.0","Google Pixel 3-9.0"]` |
 |  project <br><sub><sup>optional</sup></sub> | string | Name of the project. It can be used as a constant to list multiple build executions under same project name. <br> <b>Example</b>  `XCUI_Test` |
-|  shards <br><sub><sup>optional</sup></sub>  | object | Shard object to split and execute the test-suite in shards. You can specify the `numberOfShards` and `mapping` object as shown in example request. |
+|  debugscreenshots <br><sub><sup>optional</sup></sub>  | boolean | Enable saving of screenshots automatically captured by XCode. Screenshots can be rendered by accessing the rawlogs using the XCUITest sessions API. Values: `true`/`false` |
+|  skip-testing <br><sub><sup>optional</sup></sub>  | boolean | Specify the classes or tests to be skipped in the build. <br> <b>Example</b> : `["SampleXCUITests/testLogin","SampleXCUITests/testSignUp"]` |
+|  only-testing <br><sub><sup>optional</sup></sub>  | array | Specify the classes or tests to be executed in the build. <br> <b>Example</b> : `["SampleXCUITests/testAlert"]` |
+|  callbackURL <br><sub><sup>optional</sup></sub>  | string | Specify a callback url where we can send a confirmation once your individual test execution is completed. |
+|  projectNotifyURL <br><sub><sup>optional</sup></sub>  | string | Notify url for projects where we can send a confirmation once execution of all the builds under the project are completed. |
+|  video <br><sub><sup>optional</sup></sub>  | boolean | Enable/Disable the video of the test run. <br> <b>Default</b> : `true` |
+|  deviceLogs <br><sub><sup>optional</sup></sub>  | boolean | Enable the device logs. <br> <b>Default</b> : `false` |
+|  networkLogs <br><sub><sup>optional</sup></sub>  | boolean | Enable the network logs. <br> <b>Default</b> : `false` |
+|  local <br><sub><sup>optional</sup></sub>  | boolean | Required if you are testing against internal/local servers. <br> <b>Default</b> : `false` |
+|  localIdentifier <br><sub><sup>optional</sup></sub>  | string | If you are using same account to test multiple applications, you can setup named connection using the localIdentifier option. <br> <b>Example</b> : `Test123` |
+|  networkProfile <br><sub><sup>optional</sup></sub>  | string |  Simulate different network conditions from the [list of existing](https://www.browserstack.com/app-automate/network-simulation) network profiles. <br> <b>Example</b> : `2g-gprs-good` |
+|  customNetwork <br><sub><sup>optional</sup></sub>  | string |  Simulate the custom network conditions. <br> <b>Format</b> : `download speed (kbps), upload speed (kbps), latency (ms), packet loss (%)` |
+|  geoLocation <br><sub><sup>optional</sup></sub>  | string | Test how your app behaves in specific countries. View the [list of supported countries](https://www.browserstack.com/ip-geolocation).<br> <b>Example</b> : `CN` for China |
+|  gpsLocation <br><sub><sup>optional</sup></sub>  | string |  Simulate the location of the device to a particular GPS location. Acceptable range for latitude is -90 to +90 and for longitude is -180 to +180. <br> <b>Example</b> : `40.730610,-73.935242` |
+|  locale <br><sub><sup>optional</sup></sub>  | string | Change the locale to test the localized version of your app. <br> <b>Example</b> : `fr` |
+|  language <br><sub><sup>optional</sup></sub>  | string | Set the language of the app under test. <br> <b>Example</b> : `fr` |
+|  deviceOrientation <br><sub><sup>optional</sup></sub>  | string | Set the language of the app under test. <br> <b>Default</b> : `potrait` |
+|  idleTimeout <br><sub><sup>optional</sup></sub>  | integer | Specify the maximum time limit for which your tests can remain idle. Accepted values are between 60 sec to 900 sec. <br> <b>Example</b> : `80` |
+|  uploadMedia <br><sub><sup>optional</sup></sub>  | array | Allows you to upload images or videos that are required during the test executions. <br> <b>Example</b> : `["media://49a8jg6280ca89075bfd8f15280ca89075bfd8f15", "media://9b7gd5s30ca89075bfd8f15280ca89075bfd8"]` |
+|  otherApps <br><sub><sup>optional</sup></sub>  | array | Allows you to use uploaded apps that are required alongwith the main app during the test executions. <br> <b>Example</b> :  `["bs://49a8jg6280ca89075bfd8f15280ca89075bfd8f15", "bs://9b7gd5s30ca89075bfd8f15280ca89075bfd8"]` |
 
 <br>
 
@@ -545,7 +564,7 @@ Once the build is successfully started, an object containing the `build_id` will
 
 ```shell
 curl -u "USERNAME:ACCESS_KEY" 
-  -X GET "https://api-cloud.browserstack.com/app-automate/xcuitest/v2/builds/{build_id}"
+  -X GET "https://api-cloud.browserstack.com/app-automate/xcuitest/v2/builds/235ab4338cec13ae6b8f7a6977344556ac00bccd6"
 ```
 
 > Example Response
@@ -554,111 +573,91 @@ curl -u "USERNAME:ACCESS_KEY"
 {
     "id": "235ab4338cec13ae6b8f7a6977344556ac00bccd6",
     "framework": "xcuitest",
-    "duration": 83,
-    "status": "failed",
+    "duration": 30,
+    "status": "passed",
     "input_capabilities": {
         "devices": [
-            "Samsung Galaxy S20-10.0",
-            "OnePlus 7-9.0",
-            "Google Pixel 3-9.0"
+            "iPhone X-11.0",
+            "iPhone 8-11.0"
         ],
-        "project": "xcuitest_Test",
-        "app": "bs://4a79f7f0390dbe5f3550b544514bddcaa8197abe",
-        "testSuite": "bs://410fe0b1c3d8bacef95ad71c09c65ad2a0008499"
+        "project": "XCUISampleBuild",
+        "debugscreenshots": "true",
+        "app": "bs://3b79f7f0390dbe5f3550b544514bddcaa8197abe",
+        "testSuite": "bs://832ge0b1c3d8bacef95ad71c09c65ad2a0008499",
+        "only-testing": [
+            "SampleXCUITests/testAlert"
+        ]
     },
-    "start_time": "2020-06-04 07:43:49 UTC",
+    "start_time": "2020-06-08 14:30:41 UTC",
     "app_details": {
-        "url": "bs://4a79f7f0390dbe5f3550b544514bddcaa8197abe",
-        "bundle_id": "com.sample.browserstack.samplecalculator",
+        "url": "bs://3b79f7f0390dbe5f3550b544514bddcaa8197abe",
+        "bundle_id": "com.browserstack.Sample-iOS",
         "version": "1.0",
         "name": "app-debug.ipa"
     },
     "test_suite_details": {
-        "url": "bs://410fe0b1c3d8bacef95ad71c09c65ad2a0008499",
-        "bundle_id": "com.sample.browserstack.samplecalculator.test",
-        "version": "",
-        "name": "app-debugTest.ipa"
+        "url": "bs://832ge0b1c3d8bacef95ad71c09c65ad2a0008499",
+        "bundle_id": "com.apple.test.SampleXCUITests-Runner",
+        "version": "1.0",
+        "name": "BrowserStack-SampleXCUITest.zip"
     },
     "devices": [
         {
-            "device": "Samsung Galaxy S20",
+            "device": "iPhone X",
             "os": "ios",
-            "os_version": "10.0",
+            "os_version": "11.0",
             "sharding": false,
             "sessions": [
-            {
-                "id": "71c55a08d7e33651d962ad676c7d6a0a09f02702",
-                "status": "failed",
-                "start_time": "2020-06-04 07:44:07 +0000",
-                "duration": 62,
-                "testcases": {
-                    "count": 9,
-                    "status": {
-                        "passed": 3,
-                        "failed": 6,
-                        "skipped": 0,
-                        "timedout": 0,
-                        "error": 0,
-                        "running": 0,
-                        "queued": 0
+                {
+                    "id": "90a161aef48b475eeacc0f384e8909089a4a1282",
+                    "status": "passed",
+                    "start_time": "2020-06-08 14:30:58 +0000",
+                    "duration": 12,
+                    "testcases": {
+                        "count": 1,
+                        "status": {
+                            "passed": 1,
+                            "failed": 0,
+                            "skipped": 0,
+                            "timedout": 0,
+                            "error": 0,
+                            "running": 0,
+                            "queued": 0
+                        }
                     }
                 }
-            }]
+            ]
         },
         {
-            "device": "OnePlus 7",
+            "device": "iPhone 8",
             "os": "ios",
-            "os_version": "9.0",
+            "os_version": "11.0",
             "sharding": false,
             "sessions": [
-            {
-                "id": "225c3cb7d1f7560635f6c83eafe418a2fabbef0d",
-                "status": "failed",
-                "start_time": "2020-06-04 07:44:10 +0000",
-                "duration": 59,
-                "testcases": {
-                    "count": 9,
-                    "status": {
-                        "passed": 3,
-                        "failed": 6,
-                        "skipped": 0,
-                        "timedout": 0,
-                        "error": 0,
-                        "running": 0,
-                        "queued": 0
+                {
+                    "id": "t5809b1ed88dde3526b5d50160e583c68760e425",
+                    "status": "passed",
+                    "start_time": "2020-06-08 14:30:55 +0000",
+                    "duration": 12,
+                    "testcases": {
+                        "count": 1,
+                        "status": {
+                            "passed": 1,
+                            "failed": 0,
+                            "skipped": 0,
+                            "timedout": 0,
+                            "error": 0,
+                            "running": 0,
+                            "queued": 0
+                        }
                     }
                 }
-            }]
-        },
-        {
-            "device": "Google Pixel 3",
-            "os": "ios",
-            "os_version": "9.0",
-            "sharding": false,
-            "sessions": [
-            {
-                "id": "a92460f7f5fd21f73673060d4046199e6a94d9e6",
-                "status": "failed",
-                "start_time": "2020-06-04 07:44:08 +0000",
-                "duration": 62,
-                "testcases": {
-                    "count": 9,
-                    "status": {
-                        "passed": 3,
-                        "failed": 6,
-                        "skipped": 0,
-                        "timedout": 0,
-                        "error": 0,
-                        "running": 0,
-                        "queued": 0
-                    }
-                }
-            }]
+            ]
         }
     ]
 }
 ```
-Get the details about your test-suite execution. You can view the details related any build exceution like devices, shards, build status etc. 
+Get the details about your XCUI build executions.
 
 
 **REQUEST**
@@ -669,7 +668,7 @@ Get the details about your test-suite execution. You can view the details relate
 
 Name | Type | Description
 --------- | ------- | -----------
-build_id <br><sub><sup>required</sup></sub> | string |The unique ID of your XCUITest build execution. <br> <b>Example</b> `8d3f5scd2dfa35ddb1265d7ebb4e6bc55d46` |
+build_id <br><sub><sup>required</sup></sub> | string |The unique ID of your XCUITest build execution. <br> <b>Example</b> `235ab4338cec13ae6b8f7a6977344556ac00bccd6` |
 
 <br>
 <br>
@@ -703,7 +702,7 @@ curl -u "USERNAME:ACCESS_KEY" \
 
 # List builds using the project filter
 curl -u "USERNAME:ACCESS_KEY" \
--X POST "https://api-cloud.browserstack.com/app-automate/xcuitest/v2/builds?project=<project_name>"
+-X POST "https://api-cloud.browserstack.com/app-automate/xcuitest/v2/builds?project=XCUISampleBuild"
 ```
 
 > Example Response
@@ -737,7 +736,7 @@ For getting the list of builds using the project filter:
 
 | Name      | Type   | Description                         |
 |-----------|--------|-------------------------------------|
-|  app <br><sub><sup>required</sup></sub> | object | App url of app uploaded on BrowserStack. <br> <b>Example</b> `bs://3b79f7f0390dbe5f3550b544514bddcaa8197abe` |
+|  project <br><sub><sup>required</sup></sub> | string | Name of the project. <br> <b>Example</b> `XCUISampleBuild` |
 
 <aside class="notice"> To know more about how to split your test-suite using shards, refer to our documentation - /docs/xcuitest/shards </aside>
 
@@ -757,7 +756,7 @@ For getting the list of builds using the project filter:
 
 ```shell
 curl -u "USERNAME:ACCESS_KEY" \
--X DELETE "https://api-cloud.browserstack.com/app-automate/xcuitest/v2/builds/<build_id>"
+-X DELETE "https://api-cloud.browserstack.com/app-automate/xcuitest/v2/builds/235ab4338cec13ae6b8f7a6977344556ac00bccd6"
 ```
 
 > Example Response
@@ -801,13 +800,7 @@ Delete the build using the build ID.
 <!------------SESSION APIS----------------->
 
 ##  xcui:Sessions
-<p> Each execution of test-suite on individual device(s) is treated as a session on Browserstack.</p>
-<p><b> Shards:</b> In case you are using the shards to split your XCUI test-suite in the build API endpoint, then each shard execution on a device represents an individual session.</p>
-<p> You can use the Session REST API endpoints, to perform the following actions:
-1. Get the session details
-2. Get the JUnit report for the session
-3. Get the code coverage report for the session
-
+<p> Each execution of test-suite on individual device(s) is treated as a session on Browserstack. You can use the Session REST API endpoints to get the session details. </p>
 
 ###  xcui:Get session details
 
@@ -815,22 +808,22 @@ Delete the build using the build ID.
 
 ```shell
 curl -u "USERNAME:ACCESS_KEY" \
--X DELETE "https://api-cloud.browserstack.com/app-automate/xcuitest/v2/builds/57dd68e05f76ca3c9c0d4600fd78ae064fa537bb/sessions/c9215a31aace1d2b885f1c7a9f5d73bce55b4543"
+-X DELETE "https://api-cloud.browserstack.com/app-automate/xcuitest/v2/builds/235ab4338cec13ae6b8f7a6977344556ac00bccd6/sessions/90a161aef48b475eeacc0f384e8909089a4a1282"
 ```
 
 > Example Response
 
 ```json
 {
-    "id": "c9215a31aace1d2b885f1c7a9f5d73bce55b4543",
-    "status": "failed",
-    "start_time": "2020-06-04 07:44:20 +0000",
-    "duration": 43,
+    "id": "90a161aef48b475eeacc0f384e8909089a4a1282",
+    "status": "passed",
+    "start_time": "2020-06-08 14:30:58 +0000",
+    "duration": 12,
     "testcases": {
-        "count": 6,
+        "count": 1,
         "status": {
-            "passed": 0,
-            "failed": 6,
+            "passed": 1,
+            "failed": 0,
             "skipped": 0,
             "timedout": 0,
             "error": 0,
@@ -839,44 +832,21 @@ curl -u "USERNAME:ACCESS_KEY" \
         },
         "data": [
             {
-                "class": "EnsureOperationTests",
+                "class": "SampleXCUITests",
                 "testcases": [
                     {
-                        "name": "ensureMultiplicationWorks",
-                        "start_time": "2020-06-04 07:44:25 +0000",
-                        "status": "failed",
-                        "duration": "2.057",
-                        "video": "https://api.browserstack.com/app-automate/xcuitest/builds/57cc68e05f76ca3c9c0d4600fd78ae064fa537bb/sessions/tests/c9215a31aace1d2b885f1c7a9f5d73bce55b4543406d4de4/video#t=0,5",
-                        "id": "c9215a31aace1d2b885f1c7a9f5d73bce55b4543406d4de4",
-                        "instrumentation_log": "https://api.browserstack.com/app-automate/xcuitest/builds/57cc68e05f76ca3c9c0d4600fd78ae064fa537bb/sessions/tests/c9215a31aace1d2b885f1c7a9f5d73bce55b4543406d4de4/instrumentationlogs"
-                    },
-                    {
-                        "name": "ensureDivisionWorks",
-                        "start_time": "2020-06-04 07:44:31 +0000",
-                        "status": "failed",
-                        "duration": "1.96",
-                        "video": "https://api.browserstack.com/app-automate/xcuitest/builds/57cc68e05f76ca3c9c0d4600fd78ae064fa537bb/sessions/tests/c9215a31aace1d2b885f1c7a9f5d73bce55b4543e5295377/video#t=6,11",
-                        "id": "c9215a31aace1d2b885f1c7a9f5d73bce55b4543e5295377",
-                        "instrumentation_log": "https://api.browserstack.com/app-automate/xcuitest/builds/57cc68e05f76ca3c9c0d4600fd78ae064fa537bb/sessions/tests/c9215a31aace1d2b885f1c7a9f5d73bce55b4543e5295377/instrumentationlogs"
-                    }
-                ]
-            },
-            {
-                "class": "EnsureInputTests",
-                "testcases": [
-                    {
-                        "name": "ensureMultipleInputIsHandled",
-                        "start_time": "2020-06-04 07:44:50 +0000",
-                        "status": "failed",
-                        "duration": "0.313",
-                        "video": "https://api.browserstack.com/app-automate/xcuitest/builds/57cc68e05f76ca3c9c0d4600fd78ae064fa537bb/sessions/tests/c9219a12aace1d2b885f1c7a9f5d73bce55b454324e815c7/video#t=25,28",
-                        "id": "c9219a12aace1d2b885f1c7a9f5d73bce55b454324e815c7",
-                        "instrumentation_log": "https://api.browserstack.com/app-automate/xcuitest/builds/57cc68e05f76ca3c9c0d4600fd78ae064fa537bb/sessions/tests/c9219a12aace1d2b885f1c7a9f5d73bce55b454324e815c7/instrumentationlogs"
+                        "name": "testAlert",
+                        "start_time": "2020-06-08 14:31:00 +0000",
+                        "status": "passed",
+                        "duration": 9.563,
+                        "video": "https://api.browserstack.com/app-automate/xcuitest/builds/235ab4338cec13ae6b8f7a6977344556ac00bccd6/sessions/tests/76a161aef48b475eeacc0f384e8909089a4a1282b76c8202/video#t=0,0",
+                        "id": "76a161aef48b475eeacc0f384e8909089a4a1282b76c8202",
+                        "instrumentation_log": "https://api.browserstack.com/app-automate/xcuitest/builds/235ab4338cec13ae6b8f7a6977344556ac00bccd6/sessions/tests/76a161aef48b475eeacc0f384e8909089a4a1282b76c8202/instrumentationlogs"
                     }
                 ]
             }
         ]
-    },
+    }
 }
 ```
 
@@ -907,140 +877,10 @@ Fetch the details about the session execution including session status, duration
 |  testcases | object | Details about the count of test cases, their status and details about each test case execution in the given session  |
 
 
-<aside class="notice">Note: In case the session corresponds to a shard execution, there will be an additional parameter in the response object named <b>shard</b> which will contain the details about the name of the shard and the strategy used.
-</aside>
-
 
 
 <br>
 <br>
-
-
-###  xcui:Get JUnit report
-
-> Example Request
-
-```shell
-curl -u "USERNAME:ACCESS_KEY" \
--X DELETE "https://api-cloud.browserstack.com/app-automate/xcuitest/v2/builds/57dd68e05f76ca3c9c0d4600fd78ae064fa537bb/sessions/c9215a31aace1d2b885f1c7a9f5d73bce55b4543/report"
-```
-
-> Example Response
-
-```xml
-<?xml version="1.0"?>
-<testsuites>
-    <testsuite name="com.sample.browserstack.samplecalculator.EnsureInputTests" tests="2" failures="2" skipped="0" timedout="0" errors="0" time="4.419" timestamp="2020-06-04 07:44:14 +0000">
-        <properties>
-            <property session_id="c9215a31aace1d2b885f1c7a9f5d73bce55b4543"/>
-            <property devicename="Google Pixel 3"/>
-            <property os="Android"/>
-            <property version="9"/>
-        </properties>
-        <testcase name="ensureMultipleInputIsHandled" classname="com.sample.browserstack.samplecalculator.EnsureInputTests" result="failed" test_id="be2460f7f5fd21f73673060d4046199e6a94d9e624e815c7" time="0.422" video_url="https://www.browserstack.com/s3-upload/bs-video-logs-aps/s3-ap-south-1/be2460f7f5fd21f73673060d4046199e6a94d9e6/video-be2460f7f5fd21f73673060d4046199e6a94d9e6.mp4#t=0,3">
-            <failure>java.lang.RuntimeException: Unable to capture screenshot.
-	        ... 32 more
-            </failure>
-        </testcase>
-    </testsuite>
-    <testsuite name="com.sample.browserstack.samplecalculator.EnsureOperationTests" tests="4" failures="4" skipped="0" timedout="0" errors="0" time="22.643" timestamp="2020-06-04 07:44:22 +0000">
-        <properties>
-            <property session_id="c9215a31aace1d2b885f1c7a9f5d73bce55b4543"/>
-            <property devicename="Google Pixel 3"/>
-            <property os="Android"/>
-            <property version="9"/>
-        </properties>
-        <testcase name="ensureMultiplicationWorks" classname="com.sample.browserstack.samplecalculator.EnsureOperationTests" result="failed" test_id="be2460f7f5fd21f73673060d4046199e6a94d9e6406d4de4" time="2.366" video_url="https://www.browserstack.com/s3-upload/bs-video-logs-aps/s3-ap-south-1/be2460f7f5fd21f73673060d4046199e6a94d9e6/video-be2460f7f5fd21f73673060d4046199e6a94d9e6.mp4#t=8,13">
-            <failure>java.lang.RuntimeException: Unable to capture screenshot.
-	        ... 32 more
-            </failure>
-        </testcase>
-    <testsuite name="com.sample.browserstack.samplecalculator.ExampleInstrumentedTest" tests="1" failures="0" skipped="0" timedout="0" errors="0" time="0.009" timestamp="2020-06-04 07:45:01 +0000">
-        <properties>
-            <property session_id="c9215a31aace1d2b885f1c7a9f5d73bce55b4543"/>
-            <property devicename="Google Pixel 3"/>
-            <property os="Android"/>
-            <property version="9"/>
-        </properties>
-        <testcase name="useAppContext" classname="com.sample.browserstack.samplecalculator.ExampleInstrumentedTest" result="passed" test_id="be2460f7f5fd21f73673060d4046199e6a94d9e65e747bcf" time="0.009" video_url="https://www.browserstack.com/s3-upload/bs-video-logs-aps/s3-ap-south-1/be2460f7f5fd21f73673060d4046199e6a94d9e6/video-be2460f7f5fd21f73673060d4046199e6a94d9e6.mp4#t=47,50"/>
-    </testsuite>
-</testsuites>
-```
-
-Fetch the details about the session execution including session status, duration and details about each test case execution in that session.
-
-
-**REQUEST**
-
-<span style="color:darkgreen">**GET**</span> &nbsp;&nbsp;&nbsp;&nbsp; `/app-automate/xcuitest/v2/builds/<build_id>/sessions/<session_id>/report`
-
-**Path Parameters** <br>
-
-| Name      | Type   | Description                         |
-|-----------|--------|-------------------------------------|
-|  build_id <br><sub><sup>required</sup></sub> | string | Build ID of the build to which the session belongs. <br> <b>Example</b> `57dd68e05f76ca3c9c0d4600fd78ae064fa537bb` |
-|  session_id <br><sub><sup>required</sup></sub> | string | Session ID of the device execution. <br> <b>Example</b> `c9215a31aace1d2b885f1c7a9f5d73bce55b4543` |
-
-<br>
-
-**RESPONSE** <br>
-The JUnit report comprising the details of each test case execution in the session.
-
-
-<aside class="notice">Note: In case the session corresponds to a shard execution, there will be an additional parameter in the response object named <b>shard</b> which will contain the details about the name of the shard and the strategy used.
-</aside>
-
-
-
-<br>
-<br>
-
-###  xcui:Get coverage report
-
-> Example Request
-
-```shell
-curl -u "USERNAME:ACCESS_KEY" \
--X DELETE "https://api-cloud.browserstack.com/app-automate/xcuitest/v2/builds/57dd68e05f76ca3c9c0d4600fd78ae064fa537bb/sessions/c9215a31aace1d2b885f1c7a9f5d73bce55b4543/coverage"
-```
-
-> Example Response
-
-```xml
-
-```
-
-Fetch the details about the session execution including session status, duration and details about each test case execution in that session.
-
-
-**REQUEST**
-
-<span style="color:darkgreen">**GET**</span> &nbsp;&nbsp;&nbsp;&nbsp; `/app-automate/xcuitest/v2/builds/<build_id>/sessions/<session_id>/report`
-
-**Path Parameters** <br>
-
-| Name      | Type   | Description                         |
-|-----------|--------|-------------------------------------|
-|  build_id <br><sub><sup>required</sup></sub> | string | Build ID of the build to which the session belongs. <br> <b>Example</b> `57dd68e05f76ca3c9c0d4600fd78ae064fa537bb` |
-|  session_id <br><sub><sup>required</sup></sub> | string | Session ID of the device execution. <br> <b>Example</b> `c9215a31aace1d2b885f1c7a9f5d73bce55b4543` |
-
-<br>
-
-**RESPONSE** <br>
-The JUnit report comprising the details of each test case execution in the session.
-
-
-<aside class="notice">Note: In case the session corresponds to a shard execution, there will be an additional parameter in the response object named <b>shard</b> which will contain the details about the name of the shard and the strategy used.
-</aside>
-
-
-
-<br>
-<br>
-
-
-
-
 
 ## xcui:Change log
 
