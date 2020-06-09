@@ -35,9 +35,9 @@ curl -u "USERNAME:ACESS_KEY" \
 
 ```json
 {
-   "app_url":"bs://c8ddcb5649a8280ca800075bfd8f151115bba6b3",
+   "app_url":"bs://9c6dcb5649a8280ca800075bfd8f151115bba6b3",
    "custom_id":"SampleApp",
-   "shareable_id":"akanksha48/SampleApp"
+   "shareable_id":"steve/SampleApp"
 }
 ```
 
@@ -62,7 +62,7 @@ Upload your Espresso app on BrowserStack. There are two ways to upload the apps:
 
 | Name      | Type   | Description                         |
 |-----------|--------|-------------------------------------|
-|  app_url     | string | App url of the app uploaded on BrowserStack. <br> <b>Example</b> `bs://5649a8280ca800075bfd8f151115bba6b3` |
+|  app_url     | string | App url of the app uploaded on BrowserStack. <br> <b>Example</b> `bs://9c6dcb5649a8280ca800075bfd8f151115bba6b3` |
 |  custom_id     | string | Unique name identifier for your app. <br> <b>Example</b> `SampleApp` |
 |  shareable_id  | string | ID which can be used by other users of your team. <br> <b>Example</b>  `steve/SampleApp` |
 
@@ -86,8 +86,8 @@ curl -u "USERNAME:ACESS_KEY" \
 {
     "app_name": "app-debug.apk",
     "app_version": "1.2.0",
-    "app_url": "bs://c8ddcb5649a8280ca800075bfd8f151115bba6b3",
-    "app_id": "c8ddcb5649a8280ca800075bfd8f151115bba6b3",
+    "app_url": "bs://9c6dcb5649a8280ca800075bfd8f151115bba6b3",
+    "app_id": "9c6dcb5649a8280ca800075bfd8f151115bba6b3",
     "uploaded_at": "2020-05-05 14:52:54 UTC",
     "custom_id": "SampleApp",
     "shareable_id": "steve/SampleApp"
@@ -103,7 +103,7 @@ View the details about any app uploaded on BrowserStack. You need to pass the `a
 
 | Name      | Type   | Description                         |
 |-----------|--------|-------------------------------------|
-|  app_id <br><sub><sup>required</sup></sub> | string | Unique ID of the test-suite uploaded on BrowserStack. <br> <b>Example</b> `c8ddcb5649a8280ca800075bfd8f151115bba6b3` |
+|  app_id <br><sub><sup>required</sup></sub> | string | Unique ID of the test-suite uploaded on BrowserStack. <br> <b>Example</b> `9c6dcb5649a8280ca800075bfd8f151115bba6b3` |
 
 <br>
 
@@ -114,8 +114,8 @@ View the details about any app uploaded on BrowserStack. You need to pass the `a
 |-----------|--------|-------------------------------------|
 |  app_name     | string | Name of the .apk file. <br> <b>Example</b> `app-debug.apk` |
 |  app_version     | string | The version of your app. <br> <b>Example</b> `1.2.0` |
-|  app_url  | string | App url of the app uploaded on BrowserStack. <br> <b>Example</b>  `bs://c8ddcb5649a8280ca800075bfd8f151115bba6b3` |
-|  app_id     | string | Unique ID of the app uploaded on BrowserStack. <br> <b>Example</b> `c8ddcb5649a8280ca800075bfd8f151115bba6b3` |
+|  app_url  | string | App url of the app uploaded on BrowserStack. <br> <b>Example</b>  `bs://9c6dcb5649a8280ca800075bfd8f151115bba6b3` |
+|  app_id     | string | Unique ID of the app uploaded on BrowserStack. <br> <b>Example</b> `9c6dcb5649a8280ca800075bfd8f151115bba6b3` |
 |  uploaded_at     | string | Timestamp value at which the app was uploaded on BrowserStack servers.. <br> <b>Example</b> `2020-05-05 14:52:54 UTC` |
 |  custom_id     | string | Constant name for the app. <br> <b>Example</b> `SampleApp` |
 |  shareable_id  | string | ID which can be used by other users of your team to access the app. <br> <b>Example</b>  `steve/SampleApp` |
@@ -140,15 +140,15 @@ curl -u "USERNAME:ACESS_KEY" \
   {
     "app_name": "Calculator.ipa",
     "app_version": "1.0",
-    "app_url": "bs://8f724079dc940b3e1c4a6a4e3008f724079dcefa5",
-    "app_id": "8f724079dc940b3e1c4a6a4e3008f724079dcefa5",
+    "app_url": "bs://0f124079dc940b3e1c4a6a4e3008f724079dcefa5",
+    "app_id": "0f124079dc940b3e1c4a6a4e3008f724079dcefa5",
     "uploaded_at": "2020-05-21 13:45:31 UTC"
   },
   {
      "app_name": "app-debug.apk",
     "app_version": "1.2.0",
-    "app_url": "bs://c8ddcb5649a8280ca800075bfd8f151115bba6b3",
-    "app_id": "c8ddcb5649a8280ca800075bfd8f151115bba6b3",
+    "app_url": "bs://9c6dcb5649a8280ca800075bfd8f151115bba6b3",
+    "app_id": "9c6dcb5649a8280ca800075bfd8f151115bba6b3",
     "uploaded_at": "2020-05-05 14:52:54 UTC",
     "custom_id": "SampleApp",
     "shareable_id": "steve/SampleApp"
@@ -206,7 +206,7 @@ We automatically delete your uploaded apps after 30 days from the day of upload.
 
 | Name      | Type   | Description                         |
 |-----------|--------|-------------------------------------|
-|  app_id     | string | App ID of the app uploaded on BrowserStack. <br> <b>Example</b> `f7c874f21852ba57957a3fdc33f47514288c4ba4` |
+|  app_id     | string | App ID of the app uploaded on BrowserStack. <br> <b>Example</b> `9c6dcb5649a8280ca800075bfd8f151115bba6b3` |
 
 <br>
 
@@ -253,7 +253,7 @@ curl -u "USERNAME:ACESS_KEY"  \
 
 ```json
 {
-    "test_url":"bs://f7c874f21852ba57957a3fdc33f47514288c4ba4",
+    "test_url":"bs://89c874f21852ba57957a3fdc33f47514288c4ba1",
     "custom_id":"SampleTest",
     "shareable_id":"steve/SampleTest"
 }
@@ -294,7 +294,7 @@ Upload a test-suite using a public URL
 
 | Name      | Type   | Description                         |
 |-----------|--------|-------------------------------------|
-|  test_url     | string | Test url of the test uploaded on BrowserStack. <br> <b>Example</b> `bs://f7c874f21852ba57957a3fdc33f47514288c4ba4` |
+|  test_url     | string | Test url of the test uploaded on BrowserStack. <br> <b>Example</b> `bs://89c874f21852ba57957a3fdc33f47514288c4ba1` |
 |  custom_id     | string | Constant name for the test-suite. You can use the same custom ID for multiple versions of a test-suite you upload. <br> <b>Example</b> `SampleTest` |
 |  shareable_id  | string | ID which can be used by other users of your team for accessing the test-suite. <br> <b>Example</b>  `steve/MyTest` |
 
@@ -316,8 +316,8 @@ curl -u "USERNAME:ACCESS_KEY" \
 ```json
 {
     "test_suite_name": "app-debug-androidTest.apk",
-    "test_suite_url": "bs://f7c874f21852ba57957a3fdc33f47514288c4ba4",
-    "test_suite_id": "f7c874f21852ba57957a3fdc33f47514288c4ba4",
+    "test_suite_url": "bs://89c874f21852ba57957a3fdc33f47514288c4ba1",
+    "test_suite_id": "89c874f21852ba57957a3fdc33f47514288c4ba1",
     "uploaded_at": 1591254892,
     "custom_id": null,
     "framework": "espresso"
@@ -346,8 +346,8 @@ View the details about any test-suite uploaded on BrowserStack. You need to pass
 | Name      | Type   | Description                         |
 |-----------|--------|-------------------------------------|
 |  test_suite_name     | string | Name of the test-suite file. <br> <b>Example</b> `app-debug-androidTest.apk` |
-|  test_suite_url     | string |  Test url obtained after successful upload of test-suite on BrowserStack. <br> <b>Example</b> `bs://f7c874f21852ba57957a3fdc33f47514288c4ba4` |
-|  test_suite_id  | string | Unique ID of the test-suite uploaded on BrowserStack. <br> <b>Example</b>  `f7c874f21852ba57957a3fdc33f47514288c4ba4` |
+|  test_suite_url     | string |  Test url obtained after successful upload of test-suite on BrowserStack. <br> <b>Example</b> `bs://89c874f21852ba57957a3fdc33f47514288c4ba1` |
+|  test_suite_id  | string | Unique ID of the test-suite uploaded on BrowserStack. <br> <b>Example</b>  `89c874f21852ba57957a3fdc33f47514288c4ba1` |
 |  uploaded_at     | timestamp | Timestamp value at which the app was uploaded on BrowserStack servers. <br> <b>Example</b> `1591254892`|
 |  custom_id     | string | Constant name for the test-suite. <br> <b>Example</b> `SampleTest` |
 |  framework     | string | Name of the framework. <br> <b>Value</b> `espresso` |
@@ -373,8 +373,8 @@ curl -u "USERNAME:ACESS_KEY" \
 [
   {
     "test_suite_name": "app-debug-androidTest.apk",
-    "test_suite_url": "bs://f7c874f21852ba57957a3fdc33f47514288c4ba4",
-    "test_suite_id": "f7c874f21852ba57957a3fdc33f47514288c4ba4",
+    "test_suite_url": "bs://89c874f21852ba57957a3fdc33f47514288c4ba1",
+    "test_suite_id": "89c874f21852ba57957a3fdc33f47514288c4ba1",
     "uploaded_at": 1590083493,
     "custom_id": "SampleTest",
     "framework": "espresso"
@@ -443,7 +443,7 @@ We automatically delete your uploaded test-suites after 30 days from the day of 
 
 | Name      | Type   | Description                         |
 |-----------|--------|-------------------------------------|
-|  test_suite_id     | string | Test suite ID of the test-suite uploaded on BrowserStack. <br> <b>Example</b> `f7c874f21852ba57957a3fdc33f47514288c4ba4` |
+|  test_suite_id     | string | Test suite ID of the test-suite uploaded on BrowserStack. <br> <b>Example</b> `89c874f21852ba57957a3fdc33f47514288c4ba1` |
 
 <br>
 
@@ -476,7 +476,7 @@ There will a **success** or **error** object depending on the success/failure of
 # Execute build
 curl -u "USERNAME:ACCESS_KEY" \
 -X POST "https://api-cloud.browserstack.com/app-automate/espresso/v2/build" \
--d {"app": "bs://3b79f7f0390dbe5f3550b544514bddcaa8197abe", "testSuite": "bs://832ge0b1c3d8bacef95ad71c09c65ad2a0008499","project" : "Espresso_Test" "devices": ["Samsung Galaxy S20-10.0","Google Pixel 3-9.0"]} \
+-d {"app": "bs://9c6dcb5649a8280ca800075bfd8f151115bba6b3", "testSuite": "bs://89c874f21852ba57957a3fdc33f47514288c4ba1","project" : "Espresso_Test" "devices": ["Samsung Galaxy S20-10.0","Google Pixel 3-9.0"]} \
 -H "Content-Type: application/json"
 ```
 
@@ -485,7 +485,7 @@ curl -u "USERNAME:ACCESS_KEY" \
 ```json
 {
     "message": "Success",
-    "build_id": "235ab4338cec13ae6b8f7a6977344556ac00bccd6"
+    "build_id": "5c5ab4338cec13aeb78f7a6977344556ac00bccd6"
 }
 
 ```
@@ -508,8 +508,8 @@ curl -u "USERNAME:ACCESS_KEY" \
 
 | Name      | Type   | Description                         |
 |-----------|--------|-------------------------------------|
-|  app <br><sub><sup>required</sup></sub> | string | App url of app uploaded on BrowserStack. <br> <b>Example</b> `bs://3b79f7f0390dbe5f3550b544514bddcaa8197abe` |
-|  testSuite <br><sub><sup>required</sup></sub> | string | Test url of test uploaded on BrowserStack. <br> <b>Example</b>  `bs://832ge0b1c3d8bacef95ad71c09c65ad2a0008499` |
+|  app <br><sub><sup>required</sup></sub> | string | App url of app uploaded on BrowserStack. <br> <b>Example</b> `bs://9c6dcb5649a8280ca800075bfd8f151115bba6b3` |
+|  testSuite <br><sub><sup>required</sup></sub> | string | Test url of test uploaded on BrowserStack. <br> <b>Example</b>  `bs://89c874f21852ba57957a3fdc33f47514288c4ba1` |
 |  devices <br><sub><sup>required</sup></sub> | string | Array of devices on which you want the test-suite execution. <br> <b>Example</b>  `["Samsung Galaxy S8-7.0","Google Pixel 3-9.0"]` |
 |  project <br><sub><sup>optional</sup></sub> | string | Name of the project. It can be used as a constant to list multiple build executions under same project name. <br> <b>Example</b>  `Espresso_Test` |
 |  shards <br><sub><sup>optional</sup></sub>  | object | Shard object to split and execute the test-suite in shards. You can specify the `numberOfShards` and `mapping` object as shown in example request. |
@@ -554,7 +554,7 @@ curl -u "USERNAME:ACCESS_KEY"
 
 ```json
 {
-    "id": "235ab4338cec13ae6b8f7a6977344556ac00bccd6",
+    "id": "5c5ab4338cec13aeb78f7a6977344556ac00bccd6",
     "framework": "espresso",
     "duration": 83,
     "status": "failed",
@@ -565,18 +565,18 @@ curl -u "USERNAME:ACCESS_KEY"
             "Google Pixel 3-9.0"
         ],
         "project": "Espresso_Test",
-        "app": "bs://4a79f7f0390dbe5f3550b544514bddcaa8197abe",
-        "testSuite": "bs://410fe0b1c3d8bacef95ad71c09c65ad2a0008499"
+        "app": "bs://9c6dcb5649a8280ca800075bfd8f151115bba6b3",
+        "testSuite": "bs://89c874f21852ba57957a3fdc33f47514288c4ba1"
     },
     "start_time": "2020-06-04 07:43:49 UTC",
     "app_details": {
-        "url": "bs://4a79f7f0390dbe5f3550b544514bddcaa8197abe",
+        "url": "bs://9c6dcb5649a8280ca800075bfd8f151115bba6b3",
         "bundle_id": "com.sample.browserstack.samplecalculator",
         "version": "1.0",
         "name": "app-debug.apk"
     },
     "test_suite_details": {
-        "url": "bs://410fe0b1c3d8bacef95ad71c09c65ad2a0008499",
+        "url": "bs://89c874f21852ba57957a3fdc33f47514288c4ba1",
         "bundle_id": "com.sample.browserstack.samplecalculator.test",
         "version": "",
         "name": "app-debugTest.apk"
@@ -589,7 +589,7 @@ curl -u "USERNAME:ACCESS_KEY"
             "sharding": false,
             "sessions": [
             {
-                "id": "71c55a08d7e33651d962ad676c7d6a0a09f02702",
+                "id": "4fc55a08d7e33651d962ad676c7d6a0a08902702",
                 "status": "failed",
                 "start_time": "2020-06-04 07:44:07 +0000",
                 "duration": 62,
@@ -614,7 +614,7 @@ curl -u "USERNAME:ACCESS_KEY"
             "sharding": false,
             "sessions": [
             {
-                "id": "225c3cb7d1f7560635f6c83eafe418a2fabbef0d",
+                "id": "1f5c3cb7d1f7560635f6c83eafe418a2fabbef0d",
                 "status": "failed",
                 "start_time": "2020-06-04 07:44:10 +0000",
                 "duration": 59,
@@ -639,7 +639,7 @@ curl -u "USERNAME:ACCESS_KEY"
             "sharding": false,
             "sessions": [
             {
-                "id": "a92460f7f5fd21f73673060d4046199e6a94d9e6",
+                "id": "a8760f7f5fd21f73673060d4047899e6a94d9e6",
                 "status": "failed",
                 "start_time": "2020-06-04 07:44:08 +0000",
                 "duration": 62,
@@ -671,7 +671,7 @@ Get the details about your test-suite execution. You can view the details relate
 
 Name | Type | Description
 --------- | ------- | -----------
-build_id <br><sub><sup>required</sup></sub> | string |The unique ID of your Espresso build execution. <br> <b>Example</b> `8d3f5scd2dfa35ddb1265d7ebb4e6bc55d46` |
+build_id <br><sub><sup>required</sup></sub> | string |The unique ID of your Espresso build execution. <br> <b>Example</b> `5c5ab4338cec13aeb78f7a6977344556ac00bccd6` |
 
 <br>
 <br>
@@ -680,7 +680,7 @@ build_id <br><sub><sup>required</sup></sub> | string |The unique ID of your Espr
 
 | Name      | Type   | Description                         |
 |-----------|--------|-------------------------------------|
-|  id     | string | ID of the build. <br> <b>Example</b> `235ab4338cec13ae6b8f7a6977344556ac00bccd6` |
+|  id     | string | ID of the build. <br> <b>Example</b> `5c5ab4338cec13aeb78f7a6977344556ac00bccd6` |
 |  framework | string | Name of the framework. <br> <b>Value</b> `espresso` |
 |  duration | string | Duration of the build in ms. <br> <b>Example</b> `83` |
 |  status  | array[string] | The overall status of the build. <br> <b>Values</b> `passed`/`failed`/`error`/`running`/`timedout`/`queued`/`skipped` |
@@ -714,11 +714,11 @@ curl -u "USERNAME:ACCESS_KEY" \
 {
     "builds": [
         {
-            "build_id": "8d3f5scd2dfa35ddb1265d7ebb4e6bc55d46",
+            "build_id": "5c5ab4338cec13aeb78f7a6977344556ac00bccd6",
             "start_time": "2019-11-06 13:07:45 UTC"    
         },
         {
-            "build_id": "235ab4338cec13ae6b8f7a6977344556ac00bccd6",
+            "build_id": "235ab7338cec13ae6b8f7a6977344556ac00bccd6",
             "start_time": "2020-06-04 07:43:49 UTC"    
         }
     ]
@@ -739,7 +739,7 @@ For getting the list of builds using the project filter:
 
 | Name      | Type   | Description                         |
 |-----------|--------|-------------------------------------|
-|  app <br><sub><sup>required</sup></sub> | object | App url of app uploaded on BrowserStack. <br> <b>Example</b> `bs://3b79f7f0390dbe5f3550b544514bddcaa8197abe` |
+|  project <br><sub><sup>required</sup></sub> | object | Project name used in build execution API. <br> <b>Example</b>`Espresso_Test` |
 
 <aside class="notice"> To know more about how to split your test-suite using shards, refer to our documentation - /docs/espresso/shards </aside>
 
@@ -784,7 +784,7 @@ Delete the build using the build ID.
 
 | Name      | Type   | Description                         |
 |-----------|--------|-------------------------------------|
-|  build_id <br><sub><sup>required</sup></sub> | string | Build ID of the build to be deleted. <br> <b>Example</b> `235ab4338cec13ae6b8f7a6977344556ac00bccd6` |
+|  build_id <br><sub><sup>required</sup></sub> | string | Build ID of the build to be deleted. <br> <b>Example</b> `5c5ab4338cec13aeb78f7a6977344556ac00bccd6` |
 
 <br>
 
@@ -824,7 +824,7 @@ curl -u "USERNAME:ACCESS_KEY" \
 
 ```json
 {
-    "id": "c9215a31aace1d2b885f1c7a9f5d73bce55b4543",
+    "id": "4fc55a08d7e33651d962ad676c7d6a0a08902702",
     "status": "failed",
     "start_time": "2020-06-04 07:44:20 +0000",
     "duration": 43,
@@ -848,18 +848,18 @@ curl -u "USERNAME:ACCESS_KEY" \
                         "start_time": "2020-06-04 07:44:25 +0000",
                         "status": "failed",
                         "duration": "2.057",
-                        "video": "https://api.browserstack.com/app-automate/espresso/builds/57cc68e05f76ca3c9c0d4600fd78ae064fa537bb/sessions/tests/c9215a31aace1d2b885f1c7a9f5d73bce55b4543406d4de4/video#t=0,5",
+                        "video": "https://api.browserstack.com/app-automate/espresso/builds/5c5ab4338cec13aeb78f7a6977344556ac00bccd6/sessions/tests/215a31aace1d2b885f1c7a9f5d73bce55b4543e5295377/video#t=0,5",
                         "id": "c9215a31aace1d2b885f1c7a9f5d73bce55b4543406d4de4",
-                        "instrumentation_log": "https://api.browserstack.com/app-automate/espresso/builds/57cc68e05f76ca3c9c0d4600fd78ae064fa537bb/sessions/tests/c9215a31aace1d2b885f1c7a9f5d73bce55b4543406d4de4/instrumentationlogs"
+                        "instrumentation_log": "https://api.browserstack.com/app-automate/espresso/builds/5c5ab4338cec13aeb78f7a6977344556ac00bccd6/sessions/tests/215a31aace1d2b885f1c7a9f5d73bce55b4543e5295377/instrumentationlogs"
                     },
                     {
                         "name": "ensureDivisionWorks",
                         "start_time": "2020-06-04 07:44:31 +0000",
                         "status": "failed",
                         "duration": "1.96",
-                        "video": "https://api.browserstack.com/app-automate/espresso/builds/57cc68e05f76ca3c9c0d4600fd78ae064fa537bb/sessions/tests/c9215a31aace1d2b885f1c7a9f5d73bce55b4543e5295377/video#t=6,11",
+                        "video": "https://api.browserstack.com/app-automate/espresso/builds/5c5ab4338cec13aeb78f7a6977344556ac00bccd6/sessions/tests/215a31aace1d2b885f1c7a9f5d73bce55b4543e5295377/video#t=6,11",
                         "id": "c9215a31aace1d2b885f1c7a9f5d73bce55b4543e5295377",
-                        "instrumentation_log": "https://api.browserstack.com/app-automate/espresso/builds/57cc68e05f76ca3c9c0d4600fd78ae064fa537bb/sessions/tests/c9215a31aace1d2b885f1c7a9f5d73bce55b4543e5295377/instrumentationlogs"
+                        "instrumentation_log": "https://api.browserstack.com/app-automate/espresso/builds/5c5ab4338cec13aeb78f7a6977344556ac00bccd6/sessions/tests/215a31aace1d2b885f1c7a9f5d73bce55b4543e5295377/instrumentationlogs"
                     }
                 ]
             },
@@ -893,8 +893,8 @@ Fetch the details about the session execution including session status, duration
 
 | Name      | Type   | Description                         |
 |-----------|--------|-------------------------------------|
-|  id <br><sub><sup>required</sup></sub> | string | Build ID of the build to which the session belongs. <br> <b>Example</b> `57dd68e05f76ca3c9c0d4600fd78ae064fa537bb` |
-|  session_id <br><sub><sup>required</sup></sub> | string | Session ID of the device execution. <br> <b>Example</b> `c9215a31aace1d2b885f1c7a9f5d73bce55b4543` |
+|  id <br><sub><sup>required</sup></sub> | string | Build ID of the build to which the session belongs. <br> <b>Example</b> `57cc68e05f76ca3c9c0d4600fd78ae064fa537bb` |
+|  session_id <br><sub><sup>required</sup></sub> | string | Session ID of the device execution. <br> <b>Example</b> `4fc55a08d7e33651d962ad676c7d6a0a08902702` |
 
 <br>
 
@@ -980,8 +980,8 @@ Fetch the details about the session execution including session status, duration
 
 | Name      | Type   | Description                         |
 |-----------|--------|-------------------------------------|
-|  build_id <br><sub><sup>required</sup></sub> | string | Build ID of the build to which the session belongs. <br> <b>Example</b> `57dd68e05f76ca3c9c0d4600fd78ae064fa537bb` |
-|  session_id <br><sub><sup>required</sup></sub> | string | Session ID of the device execution. <br> <b>Example</b> `c9215a31aace1d2b885f1c7a9f5d73bce55b4543` |
+|  build_id <br><sub><sup>required</sup></sub> | string | Build ID of the build to which the session belongs. <br> <b>Example</b> `5c5ab4338cec13aeb78f7a6977344556ac00bccd6` |
+|  session_id <br><sub><sup>required</sup></sub> | string | Session ID of the device execution. <br> <b>Example</b> `4fc55a08d7e33651d962ad676c7d6a0a08902702` |
 
 <br>
 
@@ -1003,7 +1003,7 @@ The JUnit report comprising the details of each test case execution in the sessi
 
 ```shell
 curl -u "USERNAME:ACCESS_KEY" \
--X DELETE "https://api-cloud.browserstack.com/app-automate/espresso/v2/builds/57dd68e05f76ca3c9c0d4600fd78ae064fa537bb/sessions/c9215a31aace1d2b885f1c7a9f5d73bce55b4543/coverage"
+-X DELETE "https://api-cloud.browserstack.com/app-automate/espresso/v2/builds/5c5ab4338cec13aeb78f7a6977344556ac00bccd6/sessions/4fc55a08d7e33651d962ad676c7d6a0a08902702/coverage"
 ```
 
 > Example Response
@@ -1023,8 +1023,8 @@ Fetch the details about the session execution including session status, duration
 
 | Name      | Type   | Description                         |
 |-----------|--------|-------------------------------------|
-|  build_id <br><sub><sup>required</sup></sub> | string | Build ID of the build to which the session belongs. <br> <b>Example</b> `57dd68e05f76ca3c9c0d4600fd78ae064fa537bb` |
-|  session_id <br><sub><sup>required</sup></sub> | string | Session ID of the device execution. <br> <b>Example</b> `c9215a31aace1d2b885f1c7a9f5d73bce55b4543` |
+|  build_id <br><sub><sup>required</sup></sub> | string | Build ID of the build to which the session belongs. <br> <b>Example</b> `5c5ab4338cec13aeb78f7a6977344556ac00bccd6` |
+|  session_id <br><sub><sup>required</sup></sub> | string | Session ID of the device execution. <br> <b>Example</b> `4fc55a08d7e33651d962ad676c7d6a0a08902702` |
 
 <br>
 
